@@ -34,8 +34,8 @@ public final class App {
             // Country data analysis
             String countryWithHighestPopulationDensity = getCountryWithHighestPopulationDensity();
             log.info("Country with highest population density: {}", countryWithHighestPopulationDensity);
-        } catch (IOException e) {
-            log.error("Error reading data: {}", e.getMessage());
+        } catch (IOException | IllegalArgumentException e) {
+            log.error("Error analyzing data: {}", e.getMessage());
         }
     }
 

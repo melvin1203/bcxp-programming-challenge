@@ -32,7 +32,13 @@ public class CsvDataReader<T> implements DataReader<T> {
                     .readerFor(type)
                     .with(schema)
                     .readValues(new File(filePath));
-            return iterator.readAll();
+
+            List<T> result = iterator.readAll();
+
+            if (result == null || result.isEmpty()) {
+                throw new IllegalArgumentException("No data rows available for header in file: " + filePath);
+            }
+            return result;
         } catch (IOException e) {
             throw new IOException("Error reading CSV file: " + e.getMessage(), e);
         }

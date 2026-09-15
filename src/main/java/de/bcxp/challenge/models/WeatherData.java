@@ -16,6 +16,15 @@ public record WeatherData(
         @JsonProperty("MxT") double maxTemp,
         @JsonProperty("MnT") double minTemp
 ) {
+    public WeatherData {
+        if (day < 1 || day > 31) {
+            throw new IllegalArgumentException("Day must be between 1 and 31");
+        }
+        if (maxTemp < minTemp) {
+            throw new IllegalArgumentException("Max temperature cannot be less than min temperature");
+        }
+    }
+
     public double getTempSpread() {
         return maxTemp - minTemp;
     }

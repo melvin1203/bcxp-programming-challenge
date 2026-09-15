@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CsvDataReaderTest {
 
@@ -40,8 +39,29 @@ class CsvDataReaderTest {
         // assert
         assertNotNull(data);
         assertEquals(27, data.size());
-        assertEquals("Austria", data.get(0).name());
-        assertEquals("8926000", data.get(0).population());
-        assertEquals("83855", data.get(0).area());
+        assertEquals("Austria", data.getFirst().name());
+        assertEquals("8926000", data.getFirst().population());
+        assertEquals("83855", data.getFirst().area());
+    }
+
+    @Test
+    void readData_shouldThrowIOExceptionForNonExistentFile() {
+        // arrange
+        CsvDataReader<WeatherData> reader = new CsvDataReader<>(WeatherData.class, ',');
+        String filePath = "src/test/resources/de.bcxp.challenge/nonexistent.csv";
+
+        // act & assert
+        assertThrows(IOException.class, () -> reader.readData(filePath));
+    }
+
+    @Test
+    void readData_onlyHeader_shouldThrowIllegalArgumentException() {
+        // arrange
+        CsvDataReader<WeatherData> reader = new CsvDataReader<>(WeatherData.class, ',');
+        String filePath = "src/test/resources/de.bcxp.challenge/empty_weather.csv";
+
+        // act & assert
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> reader.readData(filePath));
+        assertTrue(exception.getMessage().contains("No data rows available for header in file: " + filePath));
     }
 }

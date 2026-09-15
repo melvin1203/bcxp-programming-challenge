@@ -11,10 +11,10 @@ import java.util.List;
 public class WeatherDataEvaluator implements DataEvaluator<WeatherData, Integer> {
     @Override
     public Integer evaluate(List<WeatherData> data) {
-
         if (data == null || data.isEmpty()) {
-            throw new IllegalArgumentException("data is null or empty");
+            throw new IllegalArgumentException("no weather data available for evaluation");
         }
+
         return data.stream()
                 .min(Comparator.comparingDouble(WeatherData::getTempSpread))
                 .map(WeatherData::day)

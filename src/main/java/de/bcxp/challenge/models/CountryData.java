@@ -16,6 +16,18 @@ public record CountryData(
         @JsonProperty("Population") String population,
         @JsonProperty("Area (km²)") String area
 ) {
+    public CountryData {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Country name cannot be null or empty");
+        }
+        if (population == null || population.isEmpty() || parseNumber(population) <= 0) {
+            throw new IllegalArgumentException("Population cannot be null, empty and must be greater than 0");
+        }
+        if (area == null || area.isEmpty() || parseNumber(area) <= 0) {
+            throw new IllegalArgumentException("Area cannot be null, empty and must be greater than 0");
+        }
+    }
+
     public double getPopulationDensity() {
         return parseNumber(population) / parseNumber(area);
     }
