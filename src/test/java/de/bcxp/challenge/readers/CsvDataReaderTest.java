@@ -14,7 +14,7 @@ class CsvDataReaderTest {
     void readData_shouldReadWeatherDataFromCsvFile() throws IOException {
         // arrange
         CsvDataReader<WeatherData> reader = new CsvDataReader<>(WeatherData.class, ',');
-        String filePath = "src/main/resources/de/bcxp/challenge/weather.csv";
+        String filePath = "src/test/resources/de.bcxp.challenge/weather.csv";
 
         // act
         List<WeatherData> data = reader.readData(filePath);
@@ -31,7 +31,7 @@ class CsvDataReaderTest {
     void readData_shouldReadCountryDataFromCsvFile() throws IOException {
         // arrange
         CsvDataReader<de.bcxp.challenge.models.CountryData> reader = new CsvDataReader<>(de.bcxp.challenge.models.CountryData.class, ';');
-        String filePath = "src/main/resources/de/bcxp/challenge/countries.csv";
+        String filePath = "src/test/resources/de.bcxp.challenge/countries.csv";
 
         // act
         List<de.bcxp.challenge.models.CountryData> data = reader.readData(filePath);
