@@ -1,0 +1,44 @@
+@startuml
+title Software Architecture
+
+left to right direction
+
+package "App" {
+  class App
+}
+
+package "Reader Layer" {
+  interface DataReader<T> {
+    + readData(filePath: String): List<T>
+  }
+
+  class CsvDataReader implements DataReader {
+    - csvMapper: CsvMapper
+    + readData(filePath: String): List<WeatherData>
+  }
+}
+
+package "Model Layer" {
+  record WeatherData {
+    + day: int
+    + maxTemp: double
+    + minTemp: double
+    + getTempSpread(): double
+  }
+}
+
+package "Evaluator Layer" {
+  interface DataEvaluator<T, R> {
+    + evaluate(data: List<T>): R
+  }
+
+  class WeatherDataEvaluator implements DataEvaluator {
+    + evaluate(data: List<WeatherData>): Integer
+  }
+}
+
+App --> CsvDataReader : reads CSV files
+CsvDataReader --> WeatherData : maps rows to model
+App --> WeatherDataEvaluator : evaluates weather data
+WeatherDataEvaluator --> WeatherData : computes temp spread
+@enduml
