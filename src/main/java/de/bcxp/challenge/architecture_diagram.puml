@@ -1,0 +1,71 @@
+@startuml
+title Software Architecture
+
+left to right direction
+
+package "de.bcxp.challenge" {
+  class App {
+    + main(args: String...)
+    - getDayWithSmallestTemperatureSpread(): String
+    - getCountryWithHighestPopulationDensity(): String
+  }
+}
+
+package "de.bcxp.challenge.readers" {
+  interface DataReader<T> {
+    + readData(filePath: String): List<T>
+  }
+
+  class CsvDataReader<T> implements DataReader<T> {
+    + CsvDataReader(type: Class<T>, delimiter: char)
+    + readData(filePath: String): List<T>
+  }
+
+  class JsonDataReader<T> implements DataReader<T> {
+    + JsonDataReader(type: Class<T>)
+    + readData(filePath: String): List<T>
+  }
+}
+
+package "de.bcxp.challenge.models" {
+  record WeatherData {
+    + day: int
+    + maxTemp: double
+    + minTemp: double
+    + getTempSpread(): double
+  }
+
+  record CountryData {
+    + name: String
+    + population: String
+    + area: String
+    + getPopulationDensity(): double
+  }
+}
+
+package "de.bcxp.challenge.evaluators" {
+  interface DataEvaluator<T, R> {
+    + evaluate(data: List<T>): R
+  }
+
+  class WeatherDataEvaluator implements DataEvaluator<WeatherData, Integer> {
+    + evaluate(data: List<WeatherData>): Integer
+  }
+
+  class CountryDataEvaluator implements DataEvaluator<CountryData, String> {
+    + evaluate(data: List<CountryData>): String
+  }
+}
+
+App --> CsvDataReader : reads weather.csv
+App --> CsvDataReader : reads countries.csv
+
+CsvDataReader --> WeatherData : maps weather rows
+CsvDataReader --> CountryData : maps country rows
+
+App --> WeatherDataEvaluator : evaluates minimum temperature spread
+App --> CountryDataEvaluator : evaluates maximum population density
+
+WeatherDataEvaluator --> WeatherData : calculates temperature spread
+CountryDataEvaluator --> CountryData : calculates population density
+@enduml
