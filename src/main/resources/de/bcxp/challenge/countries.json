@@ -1,0 +1,272 @@
+[
+  {
+    "Name": "Austria",
+    "Capital": "Vienna",
+    "Accession": "1995",
+    "Population": 8926000,
+    "Area (km²)": 83855,
+    "GDP (US$ M)": 447718,
+    "HDI": 0.922,
+    "MEPs": 19
+  },
+  {
+    "Name": "Belgium",
+    "Capital": "Brussels",
+    "Accession": "Founder",
+    "Population": 11566041,
+    "Area (km²)": 30528,
+    "GDP (US$ M)": 517609,
+    "HDI": 0.931,
+    "MEPs": 21
+  },
+  {
+    "Name": "Bulgaria",
+    "Capital": "Sofia",
+    "Accession": "2007",
+    "Population": 6916548,
+    "Area (km²)": 110994,
+    "GDP (US$ M)": 66250,
+    "HDI": 0.816,
+    "MEPs": 17
+  },
+  {
+    "Name": "Croatia",
+    "Capital": "Zagreb",
+    "Accession": "2013",
+    "Population": 4036355,
+    "Area (km²)": 56594,
+    "GDP (US$ M)": 60702,
+    "HDI": 0.851,
+    "MEPs": 12
+  },
+  {
+    "Name": "Cyprus",
+    "Capital": "Nicosia",
+    "Accession": "2004",
+    "Population": 896000,
+    "Area (km²)": 9251,
+    "GDP (US$ M)": 24280,
+    "HDI": 0.887,
+    "MEPs": 6
+  },
+  {
+    "Name": "Czech Republic",
+    "Capital": "Prague",
+    "Accession": "2004",
+    "Population": 10574153,
+    "Area (km²)": 78866,
+    "GDP (US$ M)": 246953,
+    "HDI": 0.9,
+    "MEPs": 21
+  },
+  {
+    "Name": "Denmark",
+    "Capital": "Copenhagen",
+    "Accession": "1973",
+    "Population": 5833883,
+    "Area (km²)": 43075,
+    "GDP (US$ M)": 347176,
+    "HDI": 0.94,
+    "MEPs": 14
+  },
+  {
+    "Name": "Estonia",
+    "Capital": "Tallinn",
+    "Accession": "2004",
+    "Population": 1330068,
+    "Area (km²)": 45227,
+    "GDP (US$ M)": 31038,
+    "HDI": 0.892,
+    "MEPs": 7
+  },
+  {
+    "Name": "Finland",
+    "Capital": "Helsinki",
+    "Accession": "1995",
+    "Population": 5527493,
+    "Area (km²)": 338424,
+    "GDP (US$ M)": 269654,
+    "HDI": 0.938,
+    "MEPs": 14
+  },
+  {
+    "Name": "France",
+    "Capital": "Paris",
+    "Accession": "Founder",
+    "Population": 67439614,
+    "Area (km²)": 632833,
+    "GDP (US$ M)": 2707074,
+    "HDI": 0.901,
+    "MEPs": 79
+  },
+  {
+    "Name": "Germany",
+    "Capital": "Berlin",
+    "Accession": "Founder",
+    "Population": 83120520,
+    "Area (km²)": 357386,
+    "GDP (US$ M)": 3863344,
+    "HDI": 0.947,
+    "MEPs": 96
+  },
+  {
+    "Name": "Greece",
+    "Capital": "Athens",
+    "Accession": "1981",
+    "Population": 10682547,
+    "Area (km²)": 131990,
+    "GDP (US$ M)": 214012,
+    "HDI": 0.888,
+    "MEPs": 21
+  },
+  {
+    "Name": "Hungary",
+    "Capital": "Budapest",
+    "Accession": "2004",
+    "Population": 9730772,
+    "Area (km²)": 93030,
+    "GDP (US$ M)": 170407,
+    "HDI": 0.854,
+    "MEPs": 21
+  },
+  {
+    "Name": "Ireland",
+    "Capital": "Dublin",
+    "Accession": "1973",
+    "Population": 5006324,
+    "Area (km²)": 70273,
+    "GDP (US$ M)": 384940,
+    "HDI": 0.955,
+    "MEPs": 13
+  },
+  {
+    "Name": "Italy",
+    "Capital": "Rome",
+    "Accession": "Founder",
+    "Population": 59862348,
+    "Area (km²)": 301338,
+    "GDP (US$ M)": 1988636,
+    "HDI": 0.892,
+    "MEPs": 76
+  },
+  {
+    "Name": "Latvia",
+    "Capital": "Riga",
+    "Accession": "2004",
+    "Population": 1893223,
+    "Area (km²)": 64589,
+    "GDP (US$ M)": 35045,
+    "HDI": 0.866,
+    "MEPs": 8
+  },
+  {
+    "Name": "Lithuania",
+    "Capital": "Vilnius",
+    "Accession": "2004",
+    "Population": 2795680,
+    "Area (km²)": 65200,
+    "GDP (US$ M)": 53641,
+    "HDI": 0.882,
+    "MEPs": 11
+  },
+  {
+    "Name": "Luxembourg",
+    "Capital": "Luxembourg",
+    "Accession": "Founder",
+    "Population": 633347,
+    "Area (km²)": 2586,
+    "GDP (US$ M)": 69453,
+    "HDI": 0.916,
+    "MEPs": 6
+  },
+  {
+    "Name": "Malta",
+    "Capital": "Valletta",
+    "Accession": "2004",
+    "Population": 516100,
+    "Area (km²)": 316,
+    "GDP (US$ M)": 14859,
+    "HDI": 0.895,
+    "MEPs": 6
+  },
+  {
+    "Name": "Netherlands",
+    "Capital": "Amsterdam",
+    "Accession": "Founder",
+    "Population": 17614840,
+    "Area (km²)": 41543,
+    "GDP (US$ M)": 902355,
+    "HDI": 0.944,
+    "MEPs": 29
+  },
+  {
+    "Name": "Poland",
+    "Capital": "Warsaw",
+    "Accession": "2004",
+    "Population": 37840001,
+    "Area (km²)": 312685,
+    "GDP (US$ M)": 565854,
+    "HDI": 0.88,
+    "MEPs": 52
+  },
+  {
+    "Name": "Portugal",
+    "Capital": "Lisbon",
+    "Accession": "1986",
+    "Population": 10298252,
+    "Area (km²)": 92212,
+    "GDP (US$ M)": 236408,
+    "HDI": 0.864,
+    "MEPs": 21
+  },
+  {
+    "Name": "Romania",
+    "Capital": "Bucharest",
+    "Accession": "2007",
+    "Population": 19186201,
+    "Area (km²)": 238391,
+    "GDP (US$ M)": 243698,
+    "HDI": 0.828,
+    "MEPs": 33
+  },
+  {
+    "Name": "Slovakia",
+    "Capital": "Bratislava",
+    "Accession": "2004",
+    "Population": 5459781,
+    "Area (km²)": 49035,
+    "GDP (US$ M)": 106552,
+    "HDI": 0.86,
+    "MEPs": 14
+  },
+  {
+    "Name": "Slovenia",
+    "Capital": "Ljubljana",
+    "Accession": "2004",
+    "Population": 2108977,
+    "Area (km²)": 20273,
+    "GDP (US$ M)": 54154,
+    "HDI": 0.917,
+    "MEPs": 8
+  },
+  {
+    "Name": "Spain",
+    "Capital": "Madrid",
+    "Accession": "1986",
+    "Population": 47394223,
+    "Area (km²)": 504030,
+    "GDP (US$ M)": 1397870,
+    "HDI": 0.904,
+    "MEPs": 59
+  },
+  {
+    "Name": "Sweden",
+    "Capital": "Stockholm",
+    "Accession": "1995",
+    "Population": 10370000,
+    "Area (km²)": 449964,
+    "GDP (US$ M)": 528929,
+    "HDI": 0.945,
+    "MEPs": 21
+  }
+]
