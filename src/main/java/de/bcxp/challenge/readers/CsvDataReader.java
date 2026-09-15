@@ -1,7 +1,6 @@
 package de.bcxp.challenge.readers;
 
 import com.fasterxml.jackson.databind.MappingIterator;
-import de.bcxp.challenge.models.WeatherData;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,18 +10,26 @@ import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
 /**
- * This CsvDataReader reads weather data from a CSV file and converts it into a list of WeatherData objects.
+ * Reads data from a CSV file and maps them to domain objects of type T.
  */
-public class CsvDataReader implements DataReader<WeatherData> {
-    private final CsvMapper csvMapper = new CsvMapper();
+public class CsvDataReader<T> implements DataReader<T> {
+    private final Class<T> type;
+    private final CsvMapper csvMapper;
+    private final char delimiter;
 
+
+    public CsvDataReader(Class<T> type, char delimiter) {
+        this.type = type;
+        this.csvMapper = new CsvMapper();
+        this.delimiter = delimiter;
+    }
 
     @Override
-    public List<WeatherData> readData(String filePath) throws IOException {
-        CsvSchema schema = CsvSchema.emptySchema().withHeader();
+    public List<T> readData(String filePath) throws IOException {
+        CsvSchema schema = CsvSchema.emptySchema().withHeader().withColumnSeparator(delimiter);
         try {
-            MappingIterator<WeatherData> iterator = csvMapper
-                    .readerFor(WeatherData.class)
+            MappingIterator<T> iterator = csvMapper
+                    .readerFor(type)
                     .with(schema)
                     .readValues(new File(filePath));
             return iterator.readAll();
