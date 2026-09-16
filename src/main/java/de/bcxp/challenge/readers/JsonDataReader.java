@@ -3,6 +3,7 @@ package de.bcxp.challenge.readers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -22,7 +23,12 @@ public class JsonDataReader<T> implements DataReader<T> {
     public List<T> readData(String filePath) throws IOException {
         try {
             CollectionType listType = mapper.getTypeFactory().constructCollectionType(List.class, type);
-            return mapper.readValue(new java.io.File(filePath), listType);
+            List<T> result = mapper.readValue(new File(filePath), listType);
+
+            if (result == null || result.isEmpty()) {
+                throw new IllegalArgumentException("No data available in json file: " + filePath);
+            }
+            return result;
         } catch (IOException e) {
             throw new IOException("Error reading JSON file: " + e.getMessage(), e);
         }

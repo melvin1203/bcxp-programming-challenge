@@ -1,6 +1,5 @@
 package de.bcxp.challenge.evaluators;
 
-
 import de.bcxp.challenge.models.CountryData;
 
 import java.util.Comparator;
