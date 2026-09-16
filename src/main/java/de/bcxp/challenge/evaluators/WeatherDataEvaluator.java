@@ -12,7 +12,7 @@ public class WeatherDataEvaluator implements DataEvaluator<WeatherData, Integer>
     @Override
     public Integer evaluate(List<WeatherData> data) {
         if (data == null || data.isEmpty()) {
-            throw new IllegalArgumentException("no weather data available for evaluation");
+            throw new IllegalArgumentException("No weather data available for evaluation");
         }
 
         return data.stream()

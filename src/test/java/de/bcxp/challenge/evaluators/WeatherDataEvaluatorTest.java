@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class WeatherDataEvaluatorTest {
 
@@ -26,5 +26,26 @@ class WeatherDataEvaluatorTest {
 
         // assert
         assertEquals(2, result);
+    }
+
+    @Test
+    void evaluate_shouldFailForEmptyList() {
+        WeatherDataEvaluator evaluator = new WeatherDataEvaluator();
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                () -> evaluator.evaluate(List.of())
+        );
+
+        assertTrue(ex.getMessage().contains("No weather data available for evaluation"));
+    }
+
+    @Test
+    void evaluate_shouldRejectInvalidDay() {
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                () -> new WeatherData(50, 88.0, 59.0)
+        );
+
+        assertTrue(ex.getMessage().contains("Day must be between 1 and 31"));
     }
 }

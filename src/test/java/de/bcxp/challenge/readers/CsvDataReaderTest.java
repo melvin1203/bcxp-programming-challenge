@@ -56,7 +56,7 @@ class CsvDataReaderTest {
     }
 
     @Test
-    void readData_onlyHeader_shouldThrowIllegalArgumentException() {
+    void readData_onlyHeader_shouldThrowEmptyDataException() {
         // arrange
         CsvDataReader<WeatherData> reader = new CsvDataReader<>(WeatherData.class, ',');
         String filePath = "src/test/resources/de.bcxp.challenge/empty_weather.csv";
