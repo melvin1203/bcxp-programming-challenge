@@ -12,11 +12,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record WeatherData(
-        @JsonProperty("Day") int day,
-        @JsonProperty("MxT") double maxTemp,
-        @JsonProperty("MnT") double minTemp
+        @JsonProperty("Day") Integer day,
+        @JsonProperty("MxT") Double maxTemp,
+        @JsonProperty("MnT") Double minTemp
 ) {
     public WeatherData {
+        if (day == null || maxTemp == null || minTemp == null) {
+            throw new IllegalArgumentException("Missing required weather data fields (Day, MxT, or MnT).");
+        }
         if (day < 1 || day > 31) {
             throw new IllegalArgumentException("Day must be between 1 and 31");
         }

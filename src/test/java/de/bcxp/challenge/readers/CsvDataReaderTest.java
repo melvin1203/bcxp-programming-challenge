@@ -1,5 +1,6 @@
 package de.bcxp.challenge.readers;
 
+import de.bcxp.challenge.exceptions.EmptyDataException;
 import de.bcxp.challenge.models.WeatherData;
 import org.junit.jupiter.api.Test;
 
@@ -61,7 +62,7 @@ class CsvDataReaderTest {
         String filePath = "src/test/resources/de.bcxp.challenge/empty_weather.csv";
 
         // act & assert
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> reader.readData(filePath));
+        EmptyDataException exception = assertThrows(EmptyDataException.class, () -> reader.readData(filePath));
         assertTrue(exception.getMessage().contains("No data rows available for header in file: " + filePath));
     }
 }

@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import de.bcxp.challenge.exceptions.EmptyDataException;
+
 import java.util.List;
 
 /**
@@ -34,7 +36,7 @@ public class CsvDataReader<T> implements DataReader<T> {
             List<T> result = iterator.readAll();
 
             if (result == null || result.isEmpty()) {
-                throw new IllegalArgumentException("No data rows available for header in file: " + filePath);
+                throw new EmptyDataException("No data rows available for header in file: " + filePath);
             }
             return result;
         } catch (IOException e) {

@@ -13,7 +13,7 @@ public class CountryDataEvaluator implements DataEvaluator<CountryData, String> 
     @Override
     public String evaluate(List<CountryData> data) {
         if (data == null || data.isEmpty()) {
-            throw new IllegalArgumentException("no country data available for evaluation");
+            throw new IllegalArgumentException("No country data available for evaluation");
         }
 
         return data.stream()

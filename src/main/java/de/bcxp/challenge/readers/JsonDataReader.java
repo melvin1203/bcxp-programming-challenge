@@ -2,6 +2,7 @@ package de.bcxp.challenge.readers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import de.bcxp.challenge.exceptions.EmptyDataException;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class JsonDataReader<T> implements DataReader<T> {
             List<T> result = mapper.readValue(new File(filePath), listType);
 
             if (result == null || result.isEmpty()) {
-                throw new IllegalArgumentException("No data available in json file: " + filePath);
+                throw new EmptyDataException("No data available in json file: " + filePath);
             }
             return result;
         } catch (IOException e) {
